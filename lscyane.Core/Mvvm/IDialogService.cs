@@ -13,7 +13,7 @@ namespace lscyane.Core.Mvvm
         /// <param name="vm_type"></param>
         /// <param name="parameter"></param>
         /// <param name="result_action"></param>
-        public void Show(Type vm_type, DialogParameters? parameter = null, Action<object>? result_action = null);
+        public void Show(Type vm_type, DialogParameters? parameter = null, Action<bool,object>? result_action = null);
 
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace lscyane.Core.Mvvm
         /// <param name="vm_type"></param>
         /// <param name="parameter"></param>
         /// <param name="result_action"></param>
-        public void ShowDialog(Type vm_type, DialogParameters? parameter = null, Action<object>? result_action = null);
+        public void ShowDialog(Type vm_type, DialogParameters? parameter = null, Action<bool,object>? result_action = null);
         
     }
 }

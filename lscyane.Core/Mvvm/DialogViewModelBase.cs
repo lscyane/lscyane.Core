@@ -29,15 +29,17 @@ namespace lscyane.Core.Mvvm
         /// Close要求イベント
         /// </summary>
         /// <remarks> <see cref="lscyane.Wpf.Services.DialogService.GetDialogViewWithPreProcess"/> で設定 </remarks>
-        public event System.Action? RequestClose;
+        public event System.Action<bool, DialogParameters?>? RequestClose;
 
 
         /// <summary>
         /// Close要求
         /// </summary>
-        protected virtual void OnRequestClose()
+        /// <param name="result"> DialogResult </param>
+        /// <param name="param"> DialogParameters </param>
+        protected virtual void OnRequestClose(bool result = false, DialogParameters? param = null)
         {
-            this.RequestClose?.Invoke();
+            this.RequestClose?.Invoke(result, param);
         }
     }
 }

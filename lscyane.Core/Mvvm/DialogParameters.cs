@@ -39,7 +39,7 @@ namespace lscyane.Core.Mvvm
             var entry = _entries.FirstOrDefault(e => e.Key == key);
             if (entry.Equals(default(KeyValuePair<string, object>)))
             {
-                throw new KeyNotFoundException($"Key '{key}' not found in dialog parameters.");
+                throw new KeyNotFoundException($"ダイアログパラメータにキー '{key}' が見つかりません。");
             }
             if (entry.Value is T value)
             {
@@ -47,7 +47,7 @@ namespace lscyane.Core.Mvvm
             }
             else
             {
-                throw new InvalidCastException($"Value for key '{key}' cannot be cast to type '{typeof(T)}'.");
+                throw new InvalidCastException($"キー '{key}' の値は型 '{typeof(T)}' にキャストできません。");
             }
         }
     }
