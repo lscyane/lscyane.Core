@@ -69,7 +69,6 @@ try {
 }
 catch {
     Write-Host "`n[ERROR] $($_.Exception.Message)" -ForegroundColor Red
-    exit 1
 }
 finally {
     $apiKey = $null
